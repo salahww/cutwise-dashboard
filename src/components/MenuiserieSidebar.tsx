@@ -1,4 +1,5 @@
 import { Home, Package, ShoppingCart, Users, FileText, Settings, BarChart2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   Sidebar,
   SidebarContent,
@@ -79,13 +80,13 @@ export function MenuiserieSidebar() {
                 {group.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
-                      <a 
-                        href={item.url} 
+                      <Link 
+                        to={item.url} 
                         className="flex items-center gap-2 hover:text-menuiserie-400 transition-colors"
                       >
                         <item.icon className="h-5 w-5" />
                         <span>{item.title}</span>
-                      </a>
+                      </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
